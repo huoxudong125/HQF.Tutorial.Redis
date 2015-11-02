@@ -7,16 +7,28 @@ Redis和Memcached类似，它支持存储的value类型相对Memcached更多，�
 Redis的出现很大程度补偿了memcached这类keyvalue存储的不足在部分场合可以对关系数据库起到很好的补充作用。它提供了Python，Ruby，Erlang，PHP客户端，使用很方便。
 内容：
 
+
+
 ##一、安装前的准备
 下载redis
 http://redis.io/download
 官方只提供Linux源码下载，Windows版可以在 https://github.com/MSOpenTech/redis/releases 下载到，但只支持64位。
 PHP的redis扩展下载：http://pecl.php.net/package/redis
 
-##二、使用配置 (Windows环境下）
+
+##二、使用配置 (Windows环境下)
+
+Redis文件夹有以下几个文件
+redis-server.exe：服务程序
+
+redis-check-dump.exe：本地数据库检查
+
+redis-check-aof.exe：更新日志检查
+
+redis-benchmark.exe：性能测试，用以模拟同时由N个客户端发送M个 SETs/GETs 查询 (类似于 Apache 的ab 工具).
 
 ###1.启动redis服务器端
-进入redis目录后 开启服务  （注意加上redis.conf）
+进入redis目录后 开启服务  （注意加上redis.conf） Redis配置信息存放在Redis运行目录下redis.conf文件中
 redis-server.exe redis.conf
 redis会自动保存数据到硬盘，暂时不确定目录在哪
 
@@ -69,8 +81,8 @@ hdel p name
     pidfile /var/run/redis.pid
 3. 指定Redis监听端口，默认端口为6379，作者在自己的一篇博文中解释了为什么选用6379作为默认端口，因为6379在手机按键上MERZ对应的号码，而MERZ取自意大利歌女Alessia Merz的名字
     port 6379
-4. 绑定的主机地址  
-    \#bind 127.0.0.1
+4. 绑定的主机地址    
+    bind 127.0.0.1  
 5.当 客户端闲置多长时间后关闭连接，如果指定为0，表示关闭该功能，单位秒
     timeout 0
 6. 指定日志记录级别，Redis总共支持四个级别：debug、verbose、notice、warning，默认为verbose
