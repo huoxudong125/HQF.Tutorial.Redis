@@ -11,6 +11,7 @@ namespace HQF.Tutorial.Redis.Web.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Message = Session["testRedisSession"];
             return View();
         }
 

@@ -19,5 +19,11 @@ namespace HQF.Tutorial.Redis.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        protected void Session_Start()
+        {
+            Session["testRedisSession"] = "Message from the redis ression";
+        }
+
     }
 }
