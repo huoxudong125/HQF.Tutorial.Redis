@@ -41,6 +41,8 @@ namespace HQF.Tutorial.Redis.Function.UnitTest
             }
         }
 
+       
+
         /// <summary>
         /// 测试SortedSet 分页方式
         /// </summary>
@@ -75,6 +77,21 @@ namespace HQF.Tutorial.Redis.Function.UnitTest
             Assert.Equal(0, index);
 
         }
+
+        /// <summary>
+        /// 测试覆盖原有值
+        /// </summary>
+        [Fact]
+        public void TestAddToOverrideSortedSet()
+        {
+            for (int i = 0; i < _ItemCount; i++)
+            {
+                RedisClient.AddItemToSortedSet(_sortedSetKey, "key" + i, i + 5);
+            }
+        }
+
+
+    
 
     }
 }
