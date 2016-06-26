@@ -6,7 +6,7 @@ A Demo for Redis
 
 ### Server Infomation
 [ASP.NET MVC Diagnostics Using NuGet](http://haacked.com/archive/2010/12/05/asp-net-mvc-diagnostics-using-nuget.aspx/)   
-[aspnetinfo](https://aspnetinfo.codeplex.com/)   
+[ASPNETINFO](https://aspnetinfo.codeplex.com/)   
 
 
 
