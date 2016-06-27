@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ServiceStack;
 using ServiceStack.Redis;
 using Xunit;
 using Xunit.Abstractions;
 
 namespace HQF.Tutorial.Redis.Function.UnitTest
 {
-    public class UnitTest1 : IClassFixture<RedisContext>
+    public class SortedSetUnitTest : IClassFixture<RedisContext>
     {
         private readonly RedisContext _redisContext;
         private readonly ITestOutputHelper _output;
@@ -22,7 +23,7 @@ namespace HQF.Tutorial.Redis.Function.UnitTest
             get { return _redisContext.RedisClient; }
         }
 
-        public UnitTest1(RedisContext redisContext, ITestOutputHelper output)
+        public SortedSetUnitTest(RedisContext redisContext, ITestOutputHelper output)
         {
             _redisContext = redisContext;
             this._output = output;
@@ -90,8 +91,22 @@ namespace HQF.Tutorial.Redis.Function.UnitTest
             }
         }
 
+        [Fact]
+        public void OutputGuid()
+        {
+            _output.WriteLine(Guid.NewGuid().ToString());
+        }
 
-    
+        [Fact]
+        public void OutputList()
+        {
+            var list=new List<string>();
+            list.Add("A");
+            list.Add("B");
+
+            _output.WriteLine(list.Select(t=>String.Format("'{0}'",t)).Join(","));
+        }
+
 
     }
 }

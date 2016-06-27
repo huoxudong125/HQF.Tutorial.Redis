@@ -78,7 +78,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="RedisContext.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="SortedSetUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

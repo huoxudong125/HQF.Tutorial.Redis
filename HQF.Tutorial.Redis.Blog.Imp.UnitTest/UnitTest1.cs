@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using HQF.Tutorial.Redis.Blog.Common;
 using ServiceStack;
@@ -16,6 +17,10 @@ namespace HQF.Tutorial.Redis.Blog.Imp.UnitTest
 
     public class UnitTest1 : IClassFixture<BlogContext>
     {
+        public UnitTest1()
+        {
+            Debug.Listeners.Add(new DefaultTraceListener());
+        }
 
         RedisClient redis =new RedisClient("localhost");
 
