@@ -80,6 +80,7 @@
     <Compile Include="RedisContext.cs" />
     <Compile Include="SortedSetUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="HashUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
